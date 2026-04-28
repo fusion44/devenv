@@ -5150,6 +5150,12 @@ rec {
             packageId = "document-features";
           }
           {
+            name = "filedescriptor";
+            packageId = "filedescriptor";
+            optional = true;
+            target = { target, features }: (target."unix" or false);
+          }
+          {
             name = "futures-core";
             packageId = "futures-core";
             optional = true;
@@ -5206,7 +5212,7 @@ rec {
           "use-dev-tty" = [ "filedescriptor" "rustix/process" ];
           "windows" = [ "dep:winapi" "dep:crossterm_winapi" ];
         };
-        resolvedDefaultFeatures = [ "bracketed-paste" "default" "derive-more" "event-stream" "events" "windows" ];
+        resolvedDefaultFeatures = [ "bracketed-paste" "default" "derive-more" "event-stream" "events" "filedescriptor" "use-dev-tty" "windows" ];
       };
       "crossterm_winapi" = rec {
         crateName = "crossterm_winapi";
@@ -13433,13 +13439,13 @@ rec {
       };
       "iocraft" = rec {
         crateName = "iocraft";
-        version = "0.8.0";
+        version = "0.8.2";
         edition = "2021";
         workspace_member = null;
         src = pkgs.fetchgit {
-          url = "https://github.com/cachix/iocraft";
-          rev = "8de1f645c2010d2ad0959017ea06f5be1a5c1030";
-          sha256 = "1cb7wir29b9dp2v793hqs856824nvw98y60ksnwskk79pb510hy9";
+          url = "https://github.com/fusion44/iocraft";
+          rev = "9311013441ee7214bd4982d4e2b99d364d757100";
+          sha256 = "0bx6l86cy8pb3cnayjabvqcwz2x3ghz6qsygliq5fiqkdnf8s2jc";
         };
         dependencies = [
           {
@@ -13449,7 +13455,7 @@ rec {
           {
             name = "crossterm";
             packageId = "crossterm";
-            features = [ "event-stream" ];
+            features = [ "event-stream" "use-dev-tty" ];
           }
           {
             name = "futures";
@@ -13484,13 +13490,13 @@ rec {
       };
       "iocraft-macros" = rec {
         crateName = "iocraft-macros";
-        version = "0.2.3";
+        version = "0.2.4";
         edition = "2021";
         workspace_member = null;
         src = pkgs.fetchgit {
-          url = "https://github.com/cachix/iocraft";
-          rev = "8de1f645c2010d2ad0959017ea06f5be1a5c1030";
-          sha256 = "1cb7wir29b9dp2v793hqs856824nvw98y60ksnwskk79pb510hy9";
+          url = "https://github.com/fusion44/iocraft";
+          rev = "9311013441ee7214bd4982d4e2b99d364d757100";
+          sha256 = "0bx6l86cy8pb3cnayjabvqcwz2x3ghz6qsygliq5fiqkdnf8s2jc";
         };
         procMacro = true;
         libName = "iocraft_macros";
@@ -14985,7 +14991,7 @@ rec {
           "default" = [ "std" "general" "errno" ];
           "rustc-dep-of-std" = [ "core" "no_std" ];
         };
-        resolvedDefaultFeatures = [ "auxvec" "elf" "errno" "general" "ioctl" "no_std" ];
+        resolvedDefaultFeatures = [ "auxvec" "elf" "errno" "general" "ioctl" "no_std" "prctl" ];
       };
       "linux-raw-sys 0.4.15" = rec {
         crateName = "linux-raw-sys";
@@ -22325,7 +22331,7 @@ rec {
           "thread" = [ "linux-raw-sys/prctl" ];
           "use-libc" = [ "libc_errno" "libc" ];
         };
-        resolvedDefaultFeatures = [ "alloc" "default" "fs" "std" "stdio" "termios" ];
+        resolvedDefaultFeatures = [ "alloc" "default" "fs" "process" "std" "stdio" "termios" ];
       };
       "rustls 0.21.12" = rec {
         crateName = "rustls";

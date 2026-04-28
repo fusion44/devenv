@@ -4,6 +4,8 @@
 
 ### Bug Fixes
 
+- Fixed `devenv up` not accepting input (with the inline TUI duplicating the `Configuring shell` line on each keypress) inside Zellij and in Ghostty by switching iocraft's crossterm dependency to the `use-dev-tty` backend, which polls `/dev/tty` level-triggered instead of using mio's edge-triggered epoll on stdin ([#2701](https://github.com/cachix/devenv/issues/2701)).
+
 ### Improvements
 
 ### Breaking Changes

@@ -1466,6 +1466,7 @@ dependencies = [
  "crossterm_winapi",
  "derive_more",
  "document-features",
+ "filedescriptor",
  "futures-core",
  "mio 1.2.0",
  "parking_lot",
@@ -3914,8 +3915,8 @@ dependencies = [
 
 [[package]]
 name = "iocraft"
-version = "0.8.0"
-source = "git+https://github.com/cachix/iocraft?branch=row-level-diff#8de1f645c2010d2ad0959017ea06f5be1a5c1030"
+version = "0.8.2"
+source = "git+https://github.com/fusion44/iocraft?rev=9311013441ee7214bd4982d4e2b99d364d757100#9311013441ee7214bd4982d4e2b99d364d757100"
 dependencies = [
  "bitflags 2.11.1",
  "crossterm",
@@ -3929,8 +3930,8 @@ dependencies = [
 
 [[package]]
 name = "iocraft-macros"
-version = "0.2.3"
-source = "git+https://github.com/cachix/iocraft?branch=row-level-diff#8de1f645c2010d2ad0959017ea06f5be1a5c1030"
+version = "0.2.4"
+source = "git+https://github.com/fusion44/iocraft?rev=9311013441ee7214bd4982d4e2b99d364d757100#9311013441ee7214bd4982d4e2b99d364d757100"
 dependencies = [
  "proc-macro2",
  "quote",
