@@ -201,7 +201,7 @@ crossterm = "0.29.0"
 # https://github.com/ccbrown/iocraft/pull/157
 # Branch fork off cachix's row-level-diff that switches crossterm to its
 # use-dev-tty backend so input events survive in Zellij/Ghostty (#2701).
-iocraft = { git = "https://github.com/fusion44/iocraft", rev = "9311013441ee7214bd4982d4e2b99d364d757100" }
+iocraft = { git = "https://github.com/fusion44/iocraft", rev = "bcc0412baf8d417b9d9900d16f281afcf35a082d" }
 # https://github.com/crossterm-rs/crossterm/pull/1026
 crossterm = { git = "https://github.com/cachix/crossterm", branch = "0.29-cachix" }
 

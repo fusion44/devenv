@@ -804,6 +804,14 @@ async fn run_view(
             element
                 .render_loop()
                 .output(Output::Stderr)
+                // Workaround for cachix/devenv#2701 follow-up: a child of
+                // process-compose partially restores cooked-mode termios
+                // (re-enables ICANON|ECHO) on the controlling tty. With the
+                // Kitty keyboard protocol enabled, that makes every keystroke
+                // visible as `^[[<code>;<mods>:<event>u` at the cursor. Skipping
+                // the enhancement falls back to legacy key reporting so the
+                // echoed bytes are plain chars instead of escape sequences.
+                .skip_keyboard_enhancement()
                 .ignore_ctrl_c()
                 .await
         }
@@ -844,7 +852,12 @@ async fn run_view(
                 }
             };
 
-            element.fullscreen().ignore_ctrl_c().await
+            element
+                .render_loop()
+                .fullscreen()
+                .skip_keyboard_enhancement()
+                .ignore_ctrl_c()
+                .await
         }
     }
 }

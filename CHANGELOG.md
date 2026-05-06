@@ -5,6 +5,7 @@
 ### Bug Fixes
 
 - Fixed `devenv up` not accepting input (with the inline TUI duplicating the `Configuring shell` line on each keypress) inside Zellij and in Ghostty by switching iocraft's crossterm dependency to the `use-dev-tty` backend, which polls `/dev/tty` level-triggered instead of using mio's edge-triggered epoll on stdin ([#2701](https://github.com/cachix/devenv/issues/2701)).
+- Stopped enabling the Kitty keyboard enhancement protocol in the inline and fullscreen TUI render loops. A `process-compose` child was partially restoring cooked-mode termios (re-enabling `ICANON` and `ECHO`) on the controlling tty while `devenv up` was running; with the Kitty protocol enabled this manifested as visible `^[[<code>;<mods>:<event>u` echoes at the cursor in Ghostty. Falling back to legacy key reporting masks the symptom while the underlying termios clobber is investigated separately.
 
 ### Improvements
 

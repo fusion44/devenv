@@ -13444,8 +13444,8 @@ rec {
         workspace_member = null;
         src = pkgs.fetchgit {
           url = "https://github.com/fusion44/iocraft";
-          rev = "9311013441ee7214bd4982d4e2b99d364d757100";
-          sha256 = "0bx6l86cy8pb3cnayjabvqcwz2x3ghz6qsygliq5fiqkdnf8s2jc";
+          rev = "bcc0412baf8d417b9d9900d16f281afcf35a082d";
+          sha256 = "001brshy847iknr4j3lzdrvfyzixmjq42xkghr3zg9p8hjig9d58";
         };
         dependencies = [
           {
@@ -13495,8 +13495,8 @@ rec {
         workspace_member = null;
         src = pkgs.fetchgit {
           url = "https://github.com/fusion44/iocraft";
-          rev = "9311013441ee7214bd4982d4e2b99d364d757100";
-          sha256 = "0bx6l86cy8pb3cnayjabvqcwz2x3ghz6qsygliq5fiqkdnf8s2jc";
+          rev = "bcc0412baf8d417b9d9900d16f281afcf35a082d";
+          sha256 = "001brshy847iknr4j3lzdrvfyzixmjq42xkghr3zg9p8hjig9d58";
         };
         procMacro = true;
         libName = "iocraft_macros";

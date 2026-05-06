@@ -3916,7 +3916,7 @@ dependencies = [
 [[package]]
 name = "iocraft"
 version = "0.8.2"
-source = "git+https://github.com/fusion44/iocraft?rev=9311013441ee7214bd4982d4e2b99d364d757100#9311013441ee7214bd4982d4e2b99d364d757100"
+source = "git+https://github.com/fusion44/iocraft?rev=bcc0412baf8d417b9d9900d16f281afcf35a082d#bcc0412baf8d417b9d9900d16f281afcf35a082d"
 dependencies = [
  "bitflags 2.11.1",
  "crossterm",
@@ -3931,7 +3931,7 @@ dependencies = [
 [[package]]
 name = "iocraft-macros"
 version = "0.2.4"
-source = "git+https://github.com/fusion44/iocraft?rev=9311013441ee7214bd4982d4e2b99d364d757100#9311013441ee7214bd4982d4e2b99d364d757100"
+source = "git+https://github.com/fusion44/iocraft?rev=bcc0412baf8d417b9d9900d16f281afcf35a082d#bcc0412baf8d417b9d9900d16f281afcf35a082d"
 dependencies = [
  "proc-macro2",
  "quote",
